@@ -76,7 +76,7 @@ Blinkit operates across multiple outlets and categories, but lacks a **unified a
 ## 🖼️ Screenshots / Demos  
 
 ### Dashboard Preview (Power BI)  
-![Dashboard Preview](screenshot1.png)  
+![Dashboard Preview](Blinkit_Dashboard.png)  
 
 <!--
 ### Notebook Preview (Jupyter)  
