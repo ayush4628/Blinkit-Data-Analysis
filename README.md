@@ -78,6 +78,17 @@ Blinkit operates across multiple outlets and categories, but lacks a **unified a
 ### Dashboard Preview (Power BI)  
 ![Dashboard Preview](Blinkit_Dashboard.png)  
 
+
+
+
+## 📬 Contact
+📧 Email: [mauryaayush7377@gmail.com](mailto:mauryaayush7377@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/ayush4628)
+
+
+
+
+
 <!--
 ### Notebook Preview (Jupyter)  
 ![Notebook Preview](screenshot_notebook.png)   
