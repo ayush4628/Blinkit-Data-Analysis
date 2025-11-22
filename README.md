@@ -1,107 +1,158 @@
-# 🛒 Blinkit Data Store Insights  
+# 🛒 Blinkit Data Analytics (MySQL + Excel Dashboard)
 
-A comprehensive data analysis project combining **Power BI dashboards** and **Jupyter Notebook analytics** on Blinkit’s retail data.  
-This repository enables both **interactive visual exploration** and **programmatic data analysis** for better decision-making.  
+A complete analytics project combining **MySQL-based data cleaning, modeling, and SQL insights** with an **Excel PivotTable dashboard** for interactive business reporting.  
+This repository delivers both **structured database analysis** and **visual Excel-based insights** for Blinkit’s retail operations.
 
 ---
 
 ## 📌 Project Overview  
-This project explores **Blinkit sales and outlet performance** using two approaches:  
-1. **Power BI Dashboard** – Interactive, visual insights into sales, outlets, and categories.  
-2. **Jupyter Notebook** – In-depth data analysis, preprocessing, and exploratory data analysis (EDA) in Python.  
+This project analyzes **Blinkit outlet, product, and sales performance** using two approaches:
+
+1. **MySQL SQL Script** – Data cleaning, transformation, fact–dimension modeling, and analytical queries.  
+2. **Excel Dashboard** – KPI summary, PivotTables, PivotCharts, Top 10 insights, and outlet/category analysis.
 
 ---
 
 ## 🛠️ Tech Stack  
-- 📊 **Power BI Desktop** – Dashboard development & visualization.  
-- 📂 **Power Query** – Data cleaning and transformation.  
-- 🧠 **DAX (Data Analysis Expressions)** – KPIs, calculations, and measures.  
-- 📝 **Jupyter Notebook (Python)** – Data preprocessing, EDA, and statistical analysis.  
-- 📦 **Python Libraries** – Pandas, NumPy, Matplotlib, Seaborn (for notebook analysis).  
-- 📁 **File Formats** – `.pbix` for dashboard, `.ipynb` for notebook, `.png` for screenshots.  
+
+- 🛢️ **MySQL Workbench** – Data modeling, table creation, ETL, SQL aggregations  
+- 📊 **Microsoft Excel** – Dashboard design, PivotTables, charts  
+- 🔣 **SQL** – Joins, grouping, window functions, aggregations  
+- 📁 **File Formats** – `.sql`, `.xlsx`, `.csv`
 
 ---
 
 ## 📊 Data Source  
-- **Dataset**: Blinkit sales & outlet dataset.  
-- **Includes**:  
-  - Sales transactions (revenue, quantity, discounts)  
-  - Product categories & subcategories  
-  - Outlet location type (Tier 1, Tier 2, etc.)  
-  - Outlet size and years of operation  
-  - Customer purchasing trends  
+
+**Dataset:** Blinkit retail sales dataset  
+
+**Includes:**  
+- Item details (type, fat content, weight)  
+- Outlet details (size, location tier, establishment year, type)  
+- Ratings & sales metrics  
+- SKU-level and outlet-level performance patterns  
 
 ---
 
 ## 🌟 Features / Highlights  
 
 ### **Business Problem**  
-Blinkit operates across multiple outlets and categories, but lacks a **unified analysis framework** for both quick visualization and deep data exploration.  
+Blinkit operates across multiple outlet types, but managers lack a unified system to analyze:  
+- High-performing outlets  
+- Top product categories  
+- Regional performance  
+- SKU revenue contribution  
 
 ### **Goal of the Project**  
-- Deliver an **interactive Power BI dashboard** for managers and executives.  
-- Provide a **Python-based Jupyter Notebook** for analysts and data scientists to perform in-depth EDA.  
-
-### **Dashboard Walkthrough (Power BI)**    
-- **Key KPIs (Top Section)**  
-  - Total Sales  
-  - Average Sales per Outlet  
-  - Number of Outlets & Categories  
-  - Year-over-Year Growth %  
-
-- **Sales by Outlet Type (Bar Chart)**  
-  Compare sales contributions from different outlet location types (Tier 1, Tier 2, Tier 3).  
-
-- **Top Product Categories (Treemap/Bar Chart)**  
-  Visualize which categories drive the most revenue.  
-
-- **Sales Trend Over Time (Line Chart)**  
-  Monthly/quarterly sales trend to identify seasonality and growth.  
-
-- **Outlet Size vs Sales (Scatter Plot)**  
-  Analyze relationship between outlet size and revenue performance.  
-
-- **Category Contribution % (Pie/Donut Chart)**  
-  Percentage contribution of each product category to total revenue.    
-
-### **Notebook Walkthrough (Python)**  
-- Data Cleaning & Preprocessing (handling nulls, encoding, etc.)  
-- Exploratory Data Analysis (distribution plots, correlations)  
-- Sales Trends Analysis  
-- Category vs Outlet Performance  
-- Statistical Insights  
+- Build a **clean SQL data model**  
+- Generate **standardized KPIs**  
+- Create a **visual Excel dashboard**  
+- Provide insights for operational and strategic decisions  
 
 ---
 
-## 🖼️ Screenshots / Demos  
+## 🛢️ SQL Workflow Walkthrough  
 
-### Dashboard Preview (Power BI)  
-![Dashboard Preview](Blinkit_Dashboard.png)  
+### ✔ **1. Data Cleaning (MySQL)**  
+- Renamed messy column names → snake_case  
+- Fixed encoding issues  
+- Converted numeric and date columns  
+- Removed duplicates using `ANY_VALUE()`  
+- Standardized schema for analytics  
 
+### ✔ **2. Data Modeling (Star Schema)**  
 
+#### **🔹 item_dim**  
+Stores product-level attributes  
 
+#### **🔹 outlet_dim**  
+Stores outlet-level details such as type, size, location tier  
+
+#### **🔹 sales_fact**  
+Aggregated item × outlet performance:  
+- Sales amount  
+- Average rating  
+
+#### **🔹 sales_summary**  
+Stores summarized KPIs for reporting  
+
+📄 Full SQL code file:  
+**Blinkit Data Analysis sql.sql**
+
+---
+
+## 🔍 SQL Analytics Performed  
+
+### ✔ Total Sales & Avg Rating  
+### ✔ Top 10 Outlets  
+### ✔ Top 10 Items  
+### ✔ Sales by Outlet Type  
+### ✔ Sales by City Tier  
+### ✔ Supermarket Type 1 Performance  
+### ✔ Tier-3 Outlet Performance  
+### ✔ KPIs stored in summary table  
+
+---
+
+## 📈 Excel Dashboard Walkthrough  
+
+### ✔ **KPIs (Header Cards)**  
+- **Total Sales:** ₹997,159  
+- **Average Rating:** 3.96  
+- **Total SKUs:** 1,555  
+- **Total Outlets:** 8  
+
+### ✔ **PivotTables Used**  
+- Top 10 Outlets by Sales  
+- Top 10 Items by Sales  
+- Sales by Outlet Type  
+- Supermarket Type 1 Contribution  
+- Tier 3 Outlet Performance  
+
+### ✔ **Excel Functions Used**  
+- `SUMIFS()`  
+- `VLOOKUP()`  
+- `FILTER()`  
+- `GETPIVOTDATA()`  
+
+### ✔ **Visualizations**  
+- Column Charts  
+- Bar Charts  
+- KPI Cards  
+- Insight summaries  
+
+---
+
+## 📉 Key Insights  
+
+### 🔹 **Top Outlets**  
+- OUT035  
+- OUT046  
+- OUT013  
+- OUT018  
+- OUT045  
+
+### 🔹 **Top Products**  
+- FDL58  
+- FDP28  
+- FDB15  
+
+### 🔹 **Strongest Outlet Type**  
+**Supermarket Type 1** has the highest revenue contribution  
+
+### 🔹 **Tier-3 Performance**  
+Outlets like **OUT013, OUT018, OUT010** show strong sales  
+
+### 🔹 **Overall Metrics**  
+- Total revenue nearly **₹10 lakh**  
+- **1,555** unique SKUs  
+- **8** operational outlets  
+
+---
 
 ## 📬 Contact
 📧 Email: [mauryaayush7377@gmail.com](mailto:mauryaayush7377@gmail.com)  
 🔗 [LinkedIn](https://www.linkedin.com/in/ayush4628)
 
 
-
-
-
-<!--
-### Notebook Preview (Jupyter)  
-![Notebook Preview](screenshot_notebook.png)   
-
----
-
-## 🔗 Live Dashboard  
-Explore the interactive Power BI dashboard here:  
-
-👉 [Click to View Power BI Dashboard](YOUR_PUBLISHED_LINK_HERE)  
-
----
-
-## 📂 Repository Structure  
--->
 
