@@ -1,24 +1,43 @@
-# 🛒 Blinkit Data Analytics (MySQL + Excel Dashboard)
+# 🛒 Blinkit Data Analytics & Store Insights  
 
-A complete analytics project combining **MySQL-based data cleaning, modeling, and SQL insights** with an **Excel PivotTable dashboard** for interactive business reporting.  
-This repository delivers both **structured database analysis** and **visual Excel-based insights** for Blinkit’s retail operations.
+A comprehensive **end-to-end data analytics project** analyzing Blinkit’s retail operations using  
+**MySQL, Power BI, and Python (Jupyter Notebook)**.
+
+This repository delivers:
+- **Structured SQL-based data cleaning, modeling, and analytics**
+- **Interactive Power BI dashboards for business users**
+- **In-depth Python-based exploratory data analysis (EDA)**
 
 ---
 
 ## 📌 Project Overview  
-This project analyzes **Blinkit outlet, product, and sales performance** using two approaches:
 
-1. **MySQL SQL Script** – Data cleaning, transformation, fact–dimension modeling, and analytical queries.  
-2. **Excel Dashboard** – KPI summary, PivotTables, PivotCharts, Top 10 insights, and outlet/category analysis.
+This project analyzes **Blinkit outlet, product, and sales performance** using three complementary approaches:
+
+1. **MySQL Analysis**
+   - Data cleaning and transformation  
+   - Star schema data modeling  
+   - KPI generation and analytical SQL queries  
+
+2. **Power BI Dashboard**
+   - Interactive dashboards for executives and managers  
+   - KPI tracking and visual insights  
+
+3. **Jupyter Notebook (Python)**
+   - Data preprocessing  
+   - Exploratory data analysis (EDA)  
+   - Trend, category, and outlet-level insights  
 
 ---
 
 ## 🛠️ Tech Stack  
 
-- 🛢️ **MySQL Workbench** – Data modeling, table creation, ETL, SQL aggregations  
-- 📊 **Microsoft Excel** – Dashboard design, PivotTables, charts  
-- 🔣 **SQL** – Joins, grouping, window functions, aggregations  
-- 📁 **File Formats** – `.sql`, `.xlsx`, `.csv`
+- 🛢️ **MySQL Workbench** – Data cleaning, modeling, ETL, and SQL analytics  
+- 📊 **Power BI Desktop** – Interactive dashboards and reporting  
+- 🧠 **DAX** – Measures, KPIs, and calculated fields  
+- 📝 **Jupyter Notebook (Python)** – Data analysis and EDA  
+- 📦 **Python Libraries** – Pandas, NumPy, Matplotlib, Seaborn  
+- 📁 **File Formats** – `.sql`, `.pbix`, `.ipynb`, `.csv`, `.png`  
 
 ---
 
@@ -26,129 +45,125 @@ This project analyzes **Blinkit outlet, product, and sales performance** using t
 
 **Dataset:** Blinkit retail sales dataset  
 
-**Includes:**  
-- Item details (type, fat content, weight)  
-- Outlet details (size, location tier, establishment year, type)  
-- Ratings & sales metrics  
-- SKU-level and outlet-level performance patterns  
+**Includes:**
+- Item details (category, fat content, weight)  
+- Outlet details (type, size, city tier, establishment year)  
+- Sales metrics and customer ratings  
+- SKU-level and outlet-level performance data  
 
 ---
 
-## 🌟 Features / Highlights  
+## 🌟 Business Problem  
 
-### **Business Problem**  
-Blinkit operates across multiple outlet types, but managers lack a unified system to analyze:  
+Blinkit operates across multiple outlet types and locations, but lacks a **unified analytics system** to clearly understand:
+
 - High-performing outlets  
-- Top product categories  
-- Regional performance  
-- SKU revenue contribution  
-
-### **Goal of the Project**  
-- Build a **clean SQL data model**  
-- Generate **standardized KPIs**  
-- Create a **visual Excel dashboard**  
-- Provide insights for operational and strategic decisions  
+- Top-selling products and categories  
+- Regional (city-tier) performance  
+- Revenue contribution at SKU and outlet levels  
 
 ---
 
-## 🛢️ SQL Workflow Walkthrough  
+## 🎯 Project Goals  
 
-### ✔ **1. Data Cleaning (MySQL)**  
-- Renamed messy column names → snake_case  
-- Fixed encoding issues  
-- Converted numeric and date columns  
+- Build a **clean and scalable SQL data model**  
+- Generate **standardized KPIs** for business reporting  
+- Create an **interactive Power BI dashboard**  
+- Perform **deep exploratory analysis using Python**  
+- Deliver actionable insights for operational and strategic decisions  
+
+---
+
+## 🛢️ SQL Workflow (MySQL)  
+
+### ✔ 1. Data Cleaning  
+- Renamed columns to `snake_case`  
+- Fixed encoding and formatting issues  
+- Converted numeric and date fields  
 - Removed duplicates using `ANY_VALUE()`  
 - Standardized schema for analytics  
 
-### ✔ **2. Data Modeling (Star Schema)**  
+### ✔ 2. Data Modeling (Star Schema)  
 
-#### **🔹 item_dim**  
-Stores product-level attributes  
-
-#### **🔹 outlet_dim**  
-Stores outlet-level details such as type, size, location tier  
-
-#### **🔹 sales_fact**  
-Aggregated item × outlet performance:  
-- Sales amount  
-- Average rating  
-
-#### **🔹 sales_summary**  
-Stores summarized KPIs for reporting  
-
-📄 Full SQL code file:  
-**Blinkit Data Analysis sql.sql**
+- **item_dim**  
+- **outlet_dim**  
+- **sales_fact**  
+- **sales_summary**
+- 
+📄 SQL file: **Blinkit Data Analysis sql.sql**
 
 ---
 
 ## 🔍 SQL Analytics Performed  
 
-### ✔ Total Sales & Avg Rating  
-### ✔ Top 10 Outlets  
-### ✔ Top 10 Items  
-### ✔ Sales by Outlet Type  
-### ✔ Sales by City Tier  
-### ✔ Supermarket Type 1 Performance  
-### ✔ Tier-3 Outlet Performance  
-### ✔ KPIs stored in summary table  
+- Total sales and average rating  
+- Top 10 outlets by sales  
+- Top 10 items by revenue  
+- Sales by outlet type  
+- Sales by city tier  
+- Supermarket Type 1 performance  
+- Tier-3 outlet analysis  
+- KPIs stored in summary tables  
 
 ---
 
-## 📈 Excel Dashboard Walkthrough  
+## 📊 Power BI Dashboard Overview  
 
-### ✔ **KPIs (Header Cards)**  
-- **Total Sales:** ₹997,159  
-- **Average Rating:** 3.96  
-- **Total SKUs:** 1,555  
-- **Total Outlets:** 8  
+### 🔹 Key KPIs  
+- Total Sales  
+- Average Sales per Outlet  
+- Number of Outlets  
+- Number of Product Categories  
+- Year-over-Year Growth (%)  
 
-### ✔ **PivotTables Used**  
-- Top 10 Outlets by Sales  
-- Top 10 Items by Sales  
-- Sales by Outlet Type  
-- Supermarket Type 1 Contribution  
-- Tier 3 Outlet Performance  
+### 🔹 Visual Analysis  
+- **Sales by Outlet Type** (Bar Chart)  
+- **Top Product Categories** (Treemap / Bar Chart)  
+- **Sales Trend Over Time** (Line Chart)  
+- **Outlet Size vs Sales** (Scatter Plot)  
+- **Category Contribution (%)** (Donut Chart)  
 
-### ✔ **Excel Functions Used**  
-- `SUMIFS()`  
-- `VLOOKUP()`  
-- `FILTER()`  
-- `GETPIVOTDATA()`  
-
-### ✔ **Visualizations**  
-- Column Charts  
-- Bar Charts  
-- KPI Cards  
-- Insight summaries  
+📁 File: `Blinkit_Dashboard.pbix`  
 
 ---
 
-## 📉 Key Insights  
+## 🧪 Jupyter Notebook (Python) Analysis  
 
-### 🔹 **Top Outlets**  
-- OUT035  
-- OUT046  
-- OUT013  
-- OUT018  
-- OUT045  
+### ✔ Data Preprocessing  
+- Handling missing values  
+- Data type corrections  
+- Encoding categorical variables  
 
-### 🔹 **Top Products**  
-- FDL58  
-- FDP28  
-- FDB15  
+### ✔ Exploratory Data Analysis (EDA)  
+- Sales distribution analysis  
+- Category-wise and outlet-wise comparisons  
+- Correlation analysis  
+- Trend and seasonality detection  
 
-### 🔹 **Strongest Outlet Type**  
-**Supermarket Type 1** has the highest revenue contribution  
+### ✔ Advanced Insights  
+- Category vs outlet performance  
+- Outlet size impact on revenue  
+- Statistical observations and patterns  
 
-### 🔹 **Tier-3 Performance**  
-Outlets like **OUT013, OUT018, OUT010** show strong sales  
-
-### 🔹 **Overall Metrics**  
-- Total revenue nearly **₹10 lakh**  
-- **1,555** unique SKUs  
-- **8** operational outlets  
+📁 File: `Blinkit_Analysis.ipynb`
 
 ---
+
+## 📈 Key Insights  
+
+- **Supermarket Type 1** generates the highest revenue  
+- **Tier-3 outlets** show strong performance despite lower infrastructure  
+- A small group of SKUs contributes a large share of total revenue  
+- Outlet size has a measurable impact on sales performance  
+- Overall revenue is close to **₹10 lakh**, spread across **8 outlets**  
+
+---
+## 🖼️ Screenshots / Demos  
+
+### Dashboard Preview (Power BI)  
+![Dashboard Preview](Screenshots/Blinkit_Dashboard.png)  
+
+
 
 ## 📬 Contact
 📧 Email: [mauryaayush7377@gmail.com](mailto:mauryaayush7377@gmail.com)  
